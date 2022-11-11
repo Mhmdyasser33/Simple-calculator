@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="head">
+        <div class="heading">
+            <h1>Calculator </h1>
+        </div>
+    </div>
+    <section class="calc">
+        <form action="" class="form">
+            <input type="text" class="screen" required>
+        </form>
+        <div class="button">
+            <button type="button" class="btn btn-num" data-val="*">*</button>
+            <button type="button" class="btn btn-num" data-val="/">/</button>
+            <button type="button" class="btn btn-num" data-val="+">+</button>
+            <button type="button" class="btn btn-num" data-val="-">-</button>
+            <button type="button" class="btn btn-num" data-val="%">%</button>
+
+<!-- 
+    ==============================================================================
+ -->
+
+             <button type="button" class="btn btn-number" data-val="9">9</button>
+             <button type="button" class="btn btn-number" data-val="8">8</button>
+             <button type="button" class="btn btn-number" data-val="7">7</button>
+             <button type="button" class="btn btn-number" data-val="6">6</button>
+             <button type="button" class="btn btn-number" data-val="5">5</button>
+             <button type="button" class="btn btn-number" data-val="4">4</button>
+             <button type="button" class="btn btn-number" data-val="3">3</button>
+             <button type="button" class="btn btn-number" data-val="2">2</button>
+             <button type="button" class="btn btn-number" data-val="1">1</button>
+             <button type="button" class="btn btn-number" data-val="0">0</button>
+             <button type="button" class="btn btn-number" data-val=".">.</button>
+             <button type="button" class ="btn-grey btn-clear">C</button>
+             <button type="button"class  ="btn-grey btn-equal">=</button>
+
+        </div>
+    </section>
+    <script >
+ let scr = document.querySelector(".screen");
+let buttons = document.querySelectorAll(".btn")
+let Delete = document.querySelector(".btn-clear");
+let Equal = document.querySelector(".btn-equal");
+// click in buttons
+buttons.forEach((element)=>{
+element.addEventListener('click',(e)=>{
+    let output = e.target.dataset.val ; 
+    scr.value += output ;
+})
+})
+// equal function 
+ Equal.addEventListener('click', (e)=>{
+    if(scr.value ===''){
+        scr.value = "";
+    }
+    else{
+       let ans = eval(scr.value);
+       scr.value = ans ;
+    }
+}) 
+// delete function 
+ Delete.addEventListener('click' , ()=>{
+    scr.value = "";
+})
+    </script>
+</body>
+</html>
