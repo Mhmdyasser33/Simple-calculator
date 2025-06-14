@@ -23,11 +23,6 @@
             <button type="button" class="btn btn-num" data-val="+">+</button>
             <button type="button" class="btn btn-num" data-val="-">-</button>
             <button type="button" class="btn btn-num" data-val="%">%</button>
-
-<!-- 
-    ==============================================================================
- -->
-
              <button type="button" class="btn btn-number" data-val="9">9</button>
              <button type="button" class="btn btn-number" data-val="8">8</button>
              <button type="button" class="btn btn-number" data-val="7">7</button>
@@ -44,32 +39,6 @@
 
         </div>
     </section>
-    <script >
- let scr = document.querySelector(".screen");
-let buttons = document.querySelectorAll(".btn")
-let Delete = document.querySelector(".btn-clear");
-let Equal = document.querySelector(".btn-equal");
-// click in buttons
-buttons.forEach((element)=>{
-element.addEventListener('click',(e)=>{
-    let output = e.target.dataset.val ; 
-    scr.value += output ;
-})
-})
-// equal function 
- Equal.addEventListener('click', (e)=>{
-    if(scr.value ===''){
-        scr.value = "";
-    }
-    else{
-       let ans = eval(scr.value);
-       scr.value = ans ;
-    }
-}) 
-// delete function 
- Delete.addEventListener('click' , ()=>{
-    scr.value = "";
-})
-    </script>
+    <script src="java.js"></script>
 </body>
 </html>
